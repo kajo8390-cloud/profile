@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Private Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- 3D Background -->
+    <div id="canvas-container"></div>
+
+    <!-- Lock Screen -->
+    <div id="login-gate">
+        <div class="gate-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="title">bash — profile.exe</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">$</span> ./access_profile.sh</p>
+                    <p class="output">Access Denied. Authorization Required.</p>
+                    <p class="output">Please enter passkey to continue...</p>
+                    <div class="input-line">
+                        <span class="prompt">$</span>
+                        <input type="password" id="password-input" placeholder="Enter passkey (any)" autofocus>
+                    </div>
+                </div>
+            </div>
+            <button class="access-btn" onclick="unlockProfile()">Unlock</button>
+        </div>
+    </div>
+
+    <!-- Main Profile Content -->
+    <div id="main-content">
+        <div class="container">
+
+            <header>
+                <div class="logo"><span class="keyword">const</span> <span class="variable">profile</span> = <span
+                        class="bracket">{</span><span class="bracket">}</span></div>
+                <div class="header-actions">
+                    <div class="status-badge"><span class="dot-pulse"></span> Available for work</div>
+                    <a href="#" class="resume-btn" onclick="downloadResume()">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </header>
+
+            <div class="profile-grid">
+
+                <!-- Sidebar -->
+                <aside>
+                    <div class="profile-card">
+                        <div class="avatar">
+                            <img src="./٢٠٢٥٠٧٢٧٢١٠٦٣١٠٣.jpg"
+                                alt="Profile">
+                        </div>
+                        <div class="profile-name">Mahmoud Developer</div>
+                        <div class="profile-role">Full Stack Developer</div>
+                        <p class="profile-bio">
+                            Passionate about building digital experiences that merge art and technology.
+                        </p>
+                        
+                        <!-- Hourly Rate -->
+                        <div class="hourly-rate">
+                            <span class="rate-label">Hourly Rate</span>
+                            <span class="rate-amount">$85/hr</span>
+                        </div>
+
+                        <button class="contact-btn" onclick="window.location.href='mailto:email@example.com'">Contact
+                            Me</button>
+
+                        <div class="social-icons">
+                            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://dribbble.com" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="info-sections">
+
+                    <!-- Statistics -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>Statistics<span
+                                class="token">/></span></div>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Years Exp.</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">30+</div>
+                                <div class="stat-label">Clients</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>Services<span
+                                class="token">/></span></div>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <div class="service-icon"><i class="fas fa-globe"></i></div>
+                                <h4>Web Development</h4>
+                                <p>Modern & responsive websites</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-icon"><i class="fas fa-palette"></i></div>
+                                <h4>UI/UX Design</h4>
+                                <p>Beautiful user interfaces</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                                <h4>Mobile Apps</h4>
+                                <p>Cross-platform applications</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-icon"><i class="fas fa-code"></i></div>
+                                <h4>API Development</h4>
+                                <p>REST & GraphQL APIs</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                                <h4>Cloud Solutions</h4>
+                                <p>AWS & Azure deployment</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-icon"><i class="fas fa-users"></i></div>
+                                <h4>Consulting</h4>
+                                <p>Technical guidance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>Skills<span class="token">/></span>
+                        </div>
+                        <div class="skills-container">
+                            <div class="skill-category">
+                                <h4>Frontend</h4>
+                                <div class="skills-grid">
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">TypeScript</span>
+                                    <span class="skill-tag">Vue.js</span>
+                                    <span class="skill-tag">Next.js</span>
+                                    <span class="skill-tag">Three.js</span>
+                                    <span class="skill-tag">HTML5</span>
+                                    <span class="skill-tag">CSS3</span>
+                                    <span class="skill-tag">Tailwind</span>
+                                    <span class="skill-tag">Figma</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Backend</h4>
+                                <div class="skills-grid">
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Express</span>
+                                    <span class="skill-tag">Django</span>
+                                    <span class="skill-tag">FastAPI</span>
+                                    <span class="skill-tag">GraphQL</span>
+                                    <span class="skill-tag">REST APIs</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Database</h4>
+                                <div class="skills-grid">
+                                    <span class="skill-tag">MongoDB</span>
+                                    <span class="skill-tag">PostgreSQL</span>
+                                    <span class="skill-tag">MySQL</span>
+                                    <span class="skill-tag">Redis</span>
+                                    <span class="skill-tag">SQL</span>
+                                    <span class="skill-tag">Firebase</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Tools & DevOps</h4>
+                                <div class="skills-grid">
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">Docker</span>
+                                    <span class="skill-tag">AWS</span>
+                                    <span class="skill-tag">CI/CD</span>
+                                    <span class="skill-tag">Linux</span>
+                                    <span class="skill-tag">Nginx</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>Certifications<span
+                                class="token">/></span></div>
+                        <div class="certifications-grid">
+                            <div class="certification-item">
+                                <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                <div class="cert-info">
+                                    <h4>AWS Solutions Architect</h4>
+                                    <p>Amazon Web Services</p>
+                                    <span class="cert-date">2024</span>
+                                </div>
+                            </div>
+                            <div class="certification-item">
+                                <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                <div class="cert-info">
+                                    <h4>Google Cloud Professional</h4>
+                                    <p>Google Cloud Platform</p>
+                                    <span class="cert-date">2023</span>
+                                </div>
+                            </div>
+                            <div class="certification-item">
+                                <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                <div class="cert-info">
+                                    <h4>Meta Full Stack Developer</h4>
+                                    <p>Meta</p>
+                                    <span class="cert-date">2023</span>
+                                </div>
+                            </div>
+                            <div class="certification-item">
+                                <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                <div class="cert-info">
+                                    <h4>Kubernetes Administrator</h4>
+                                    <p>CNCF</p>
+                                    <span class="cert-date">2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>Languages<span
+                                class="token">/></span></div>
+                        <div class="languages-grid">
+                            <div class="language-item">
+                                <div class="language-info">
+                                    <span class="language-name">English</span>
+                                    <span class="language-level">Native</span>
+                                </div>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-info">
+                                    <span class="language-name">Spanish</span>
+                                    <span class="language-level">Professional</span>
+                                </div>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-info">
+                                    <span class="language-name">French</span>
+                                    <span class="language-level">Intermediate</span>
+                                </div>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-info">
+                                    <span class="language-name">German</span>
+                                    <span class="language-level">Basic</span>
+                                </div>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>Projects<span
+                                class="token">/></span></div>
+                        <div class="projects-grid">
+                            <a href="#" class="project-card">
+                                <div class="project-image">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="project-content">
+                                    <h4>E-Commerce Platform</h4>
+                                    <p>Full-stack shopping platform with payment integration</p>
+                                    <div class="project-tags">
+                                        <span>React</span>
+                                        <span>Node.js</span>
+                                        <span>MongoDB</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="project-card">
+                                <div class="project-image">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="project-content">
+                                    <h4>Task Manager App</h4>
+                                    <p>Collaborative project management application</p>
+                                    <div class="project-tags">
+                                        <span>Vue.js</span>
+                                        <span>Firebase</span>
+                                        <span>PWA</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="project-card">
+                                <div class="project-image">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <div class="project-content">
+                                    <h4>Brand Identity System</h4>
+                                    <p>Complete visual identity for tech startup</p>
+                                    <div class="project-tags">
+                                        <span>Figma</span>
+                                        <span>Branding</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="project-card">
+                                <div class="project-image">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="project-content">
+                                    <h4>Analytics Dashboard</h4>
+                                    <p>Real-time data visualization platform</p>
+                                    <div class="project-tags">
+                                        <span>D3.js</span>
+                                        <span>Python</span>
+                                        <span>AWS</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="project-card">
+                                <div class="project-image">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="project-content">
+                                    <h4>Chat Application</h4>
+                                    <p>Real-time messaging with WebSocket</p>
+                                    <div class="project-tags">
+                                        <span>Socket.io</span>
+                                        <span>React</span>
+                                        <span>Redis</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="project-card">
+                                <div class="project-image">
+                                    <i class="fas fa-vr-cardboard"></i>
+                                </div>
+                                <div class="project-content">
+                                    <h4>3D Portfolio</h4>
+                                    <p>Interactive 3D experience for creative agency</p>
+                                    <div class="project-tags">
+                                        <span>Three.js</span>
+                                        <span>WebGL</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>Experience<span
+                                class="token">/></span></div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="education-item">
+                                        <div class="education-icon"><i class="fas fa-briefcase"></i></div>
+                                        <div class="education-info">
+                                            <h4>Senior Web Developer</h4>
+                                            <p>Tech Company Inc. | 2022 - Present</p>
+                                            <span class="timeline-desc">Leading frontend architecture and mentoring junior developers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="education-item">
+                                        <div class="education-icon"><i class="fas fa-code"></i></div>
+                                        <div class="education-info">
+                                            <h4>Frontend Developer</h4>
+                                            <p>Digital Agency | 2020 - 2022</p>
+                                            <span class="timeline-desc">Built responsive websites and client applications</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="education-item">
+                                        <div class="education-icon"><i class="fas fa-laptop-code"></i></div>
+                                        <div class="education-info">
+                                            <h4>Junior Developer</h4>
+                                            <p>StartUp Labs | 2018 - 2020</p>
+                                            <span class="timeline-desc">Full-stack development and API integration</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="education-item">
+                                        <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                                        <div class="education-info">
+                                            <h4>Computer Science Degree</h4>
+                                            <p>University of Technology | 2014 - 2018</p>
+                                            <span class="timeline-desc">Bachelor's in Computer Science</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>FAQ<span
+                                class="token">/></span></div>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFaq(this)">
+                                    <span>What is your typical project timeline?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Project timelines vary based on complexity. A typical website takes 2-4 weeks, while complex web applications can take 2-3 months. I'll provide a detailed timeline during our initial consultation.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFaq(this)">
+                                    <span>Do you offer ongoing maintenance?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Yes! I offer monthly maintenance packages that include bug fixes, security updates, and minor feature additions. We can discuss a custom maintenance plan that fits your needs.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFaq(this)">
+                                    <span>What is your payment structure?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>I typically work with a 50% upfront deposit and 50% upon completion. For larger projects, we can arrange milestone-based payments. I accept bank transfer, PayPal, and crypto.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFaq(this)">
+                                    <span>Can you work with our existing team?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Absolutely! I have experience integrating with existing development teams. I can collaborate via Slack, Jira, GitHub, or any other tools your team uses.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFaq(this)">
+                                    <span>Do you provide source code ownership?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Yes, you receive full ownership of all code upon final payment. This includes all assets, documentation, and deployment configurations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>Contact<span
+                                class="token">/></span></div>
+                        <div class="contact-grid">
+                            <a href="mailto:alex@example.com" class="contact-item">
+                                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>kajo8390@gmail.com</p>
+                                </div>
+                            </a>
+                            <a href="tel:+1234567890" class="contact-item">
+                                <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+20 1008419929</p>
+                                </div>
+                            </a>
+                            <div class="contact-item">
+                                <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Egypt, Qalubia</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon"><i class="fas fa-clock"></i></span>
+                                <div>
+                                    <h4>Availability</h4>
+                                    <p>Mon-Fri, 9am-6pm EST</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials -->
+                    <div class="section-card">
+                        <div class="section-title"><span class="token"><</span>Testimonials<span
+                                class="token">/></span></div>
+                        <div class="testimonials-grid">
+                            <div class="testimonial-card">
+                                <p class="quote">"Mahmoud delivered the project before the deadline with exceptional quality. The communication was excellent throughout!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">M</div>
+                                    <div>
+                                        <h4>Michael Brown</h4>
+                                        <p>CEO, TechStart</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="quote">"Amazing work! Great communication and creative ideas. Our new website exceeded expectations!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">S</div>
+                                    <div>
+                                        <h4>Sarah Johnson</h4>
+                                        <p>Marketing Director</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="quote">"Professional, skilled, and reliable. Alex transformed our outdated platform into a modern experience."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">D</div>
+                                    <div>
+                                        <h4>David Chen</h4>
+                                        <p>Founder, InnoTech</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="quote">"The best developer we've worked with. Clean code, on-time delivery, and great problem-solving skills."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">E</div>
+                                    <div>
+                                        <h4>Emma Wilson</h4>
+                                        <p>CTO, DataFlow</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+
+            <footer>
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p><span class="keyword">const</span> <span class="variable">copyright</span> = <span
+                        class="string">"2024 All Rights Reserved"</span><span class="punctuation">;</span></p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
